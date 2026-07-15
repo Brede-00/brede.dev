@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   DESIGN TOKENS — the palette and type of the whole site live here.
+
+   snow    cool Nordic off-white, the paper of the site
+   ink     cold near-black, primary text
+   slate   secondary text
+   mist    hairlines and borders
+   fjord   deep blue — links and structure
+   signal  red — reserved for meaning: availability, live markers, alerts
+   ============================================================================ */
+
+@theme {
+  --color-snow: #f3f5f4;
+  --color-ink: #14181c;
+  --color-slate: #59636d;
+  --color-mist: #d9dfdc;
+  --color-fjord: #0f4c5c;
+  --color-signal: #bf1230;
+
+  --font-display: "Schibsted Grotesk Variable", "Schibsted Grotesk",
+    ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-data: "Fragment Mono", ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+
+  --animate-stream: stream 55s linear infinite;
+
+  @keyframes stream {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-snow);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-feature-settings: "ss01" on;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-fjord);
+  color: var(--color-snow);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-fjord);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Mono data labels — eyebrows, meta, tags */
+.data-label {
+  font-family: var(--font-data);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.data-text {
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* Respect reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Print — used by /resume */
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  @page {
+    margin: 14mm;
+  }
+}
