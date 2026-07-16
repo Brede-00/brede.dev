@@ -1,17 +1,3 @@
-// ============================================================================
-// PROJECTS — edit this file to change project rows and full case studies.
-//
-// Each project renders as a row on the homepage and a page at /projects/slug.
-// `body` is a list of typed blocks; add, remove, or reorder them freely:
-//   { type: "p",     text: "..." }                      → paragraph
-//   { type: "h2",    text: "..." }                      → section heading
-//   { type: "ul",    items: ["...", "..."] }            → bullet list
-//   { type: "facts", rows: [{ label, value }, ...] }    → mono facts table
-//
-// `links` show as "GitHub ↗" etc. on the case page. Leave [] to show none —
-// add repo links once the code is on GitHub.
-// ============================================================================
-
 export type ProjectLink = { label: string; href: string };
 
 export type Block =
@@ -35,7 +21,7 @@ export type Project = {
 export const projectsHeading = "Selected projects";
 
 export const projects: Project[] = [
-  // --------------------------------------------------------------------------
+
   {
     slug: "market-data-pipeline",
     title: "Real-Time Market Data Filter & Alert System",
@@ -54,7 +40,7 @@ export const projects: Project[] = [
       { type: "h2", text: "Collect everything, filter later" },
       {
         type: "p",
-        text: "The collector holds a WebSocket connection to PumpPortal and writes every token creation event, and the bonding-curve trades that follow, into an append-only event log. Deliberately, nothing is filtered at ingest: filtering early is how you bake today's assumptions into tomorrow's dataset. The pipeline's first job is to be a faithful record.",
+        text: "The collector holds a WebSocket connection to PumpPortal and writes every token creation event, and the bonding-curve trades that follow, into an append-only event log. Nothing is filtered at ingest — any filter would encode assumptions about what matters, and I don't know that yet. The pipeline's first job is to record everything.",
       },
       { type: "h2", text: "Mining rules without fooling myself" },
       {
@@ -77,8 +63,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // --------------------------------------------------------------------------
   {
     slug: "circle",
     title: "Circle",
@@ -86,37 +70,40 @@ export const projects: Project[] = [
     status: "Built — pre-launch",
     category: "Full-stack product · web + mobile",
     oneLiner:
-      "Social platform for coordinating college nightlife — a web app and a mobile app sharing one backend.",
+      "Social networking app built around small, intentional groups — two clients (web + native) sharing one Supabase backend with row-level security.",
     stack: ["Next.js", "TypeScript", "Supabase", "Expo / React Native", "Tailwind CSS"],
     links: [],
     body: [
       {
         type: "p",
-        text: "Deciding where a group is actually going tonight is a mess of group chats, half-answers, and screenshots. Circle turns it into one screen: see what your circles are planning, commit to a plan, and let the plan settle itself.",
+        text: "Most social apps give you one big feed. Circle is organized around small groups — public or private — where posts, membership, and roles stay scoped to the people who actually matter for that context. A close-friends circle and a class circle don't need to see each other.",
+      },
+      { type: "h2", text: "What it does" },
+      {
+        type: "p",
+        text: "Users create or join circles (public ones are discoverable, private ones use invite codes). Inside a circle: text posts, likes, comments, role-based permissions. On top of that there's a personal feed that pulls from all your circles, standard follow/profile mechanics, and a discover page for finding public circles. The mobile app extends further with capacity limits and waitlists per circle, category tagging, a notifications tab, and a discovery-mode home feed for new users.",
       },
       { type: "h2", text: "One backend, two clients" },
       {
         type: "p",
-        text: "The web app is Next.js with TypeScript and Tailwind; the mobile app is Expo / React Native. Both sit on a single Supabase backend — Postgres for data, Supabase Auth for identity — so a plan made on a laptop is the same plan on a phone. Keeping one source of truth made the two clients a rendering problem instead of a synchronization problem.",
+        text: "The web app is Next.js with TypeScript and Tailwind; the mobile app is Expo with React Native. Both talk to one Supabase backend — Postgres for data, Supabase Auth for identity. Security is enforced at the database layer with row-level security policies on every table, not just client-side checks. Denormalized counters (members, followers, likes, comments) stay consistent through Postgres triggers rather than application-side counting.",
       },
       { type: "h2", text: "Rebuilding the mobile app" },
       {
         type: "p",
-        text: "The first Expo project drifted into dependency conflicts that no amount of resolution overrides could untangle. Instead of fighting it, I rebuilt the app clean at a fresh path with a minimal, locked dependency set and moved the code over piece by piece. It cost a day and taught me more about dependency discipline than any tutorial: the lockfile is part of the product.",
+        text: "The first Expo project drifted into dependency conflicts that no amount of resolution overrides could fix. I rebuilt it clean at a fresh path with a minimal, locked dependency set and moved code over piece by piece. Slower than forcing it, but the result actually builds reliably.",
       },
       {
         type: "facts",
         rows: [
-          { label: "Web", value: "Next.js · TypeScript · Tailwind CSS" },
-          { label: "Mobile", value: "Expo / React Native" },
-          { label: "Backend", value: "Supabase — Postgres, Auth" },
-          { label: "Status", value: "Built end to end · launch planned campus-first" },
+          { label: "Web", value: "Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion" },
+          { label: "Mobile", value: "Expo SDK 52 · React Native · Reanimated · expo-haptics" },
+          { label: "Backend", value: "Supabase — Postgres with RLS, Auth, SQL triggers" },
+          { label: "Security", value: "Row-level security policies per table, not client-side" },
         ],
       },
     ],
   },
-
-  // --------------------------------------------------------------------------
   {
     slug: "btc-threshold-dashboard",
     title: "BTC Threshold Probability Dashboard",
@@ -148,8 +135,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
-  // --------------------------------------------------------------------------
   {
     slug: "betterfuture",
     title: "BetterFuture",
@@ -157,23 +142,23 @@ export const projects: Project[] = [
     status: "Complete",
     category: "First end-to-end build",
     oneLiner:
-      "Personal finance app with a hand-rolled Java backend and a plain HTML/CSS/JS frontend — the project where I learned what “end to end” costs.",
-    stack: ["Java", "HTML / CSS / JavaScript"],
+      "Financial simulation engine in Java with a Swing GUI — projects loans, income, expenses, and net worth across multi-year horizons.",
+    stack: ["Java", "Java Swing"],
     links: [],
     body: [
       {
         type: "p",
-        text: "BetterFuture is a personal finance application and my first complete build: a Java backend and a frontend in plain HTML, CSS, and JavaScript, with no frameworks between me and the problem.",
+        text: "BetterFuture is a financial planning tool and my first complete build: pick your loans, income, expenses, and repayment strategy, and it projects your net worth year by year over a multi-year horizon.",
       },
       {
         type: "p",
-        text: "That constraint was the point. Handling HTTP, persisting data, and keeping the layers separated by hand is how those ideas stopped being vocabulary and started being decisions. Everything I have built since moves faster because this project moved slowly.",
+        text: "The interesting part was the domain model. Loans, assets, and repayment strategies are separate classes with their own behavior, which made it possible to swap allocation logic — pay down the expensive loan first versus spread payments evenly — without touching the simulation loop. That separation is what I'd been reading about in object-oriented design; this is where it became a real decision instead of vocabulary.",
       },
       {
         type: "facts",
         rows: [
-          { label: "Backend", value: "Java, hand-rolled — no framework" },
-          { label: "Frontend", value: "HTML · CSS · JavaScript" },
+          { label: "Engine", value: "Java — object-oriented domain model" },
+          { label: "Interface", value: "Java Swing GUI" },
           { label: "Role here", value: "Kept as the baseline — where the work started" },
         ],
       },

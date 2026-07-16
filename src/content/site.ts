@@ -1,18 +1,6 @@
-// ============================================================================
-// SITE CONTENT — this file and `projects.ts` control every word on the site.
-// Edit text here; you never need to touch a component to change copy.
-//
-// START HERE — four things to fill in, marked with TODO:
-//   1. lastName
-//   2. githubUrl
-//   3. linkedinUrl
-//   4. resumePdf (after you drop the PDF into /public)
-// Empty strings are safe: anything left blank is simply not rendered.
-// ============================================================================
-
 export const site = {
   firstName: "Brede",
-  lastName: "", // TODO(Brede): your last name, e.g. "Hansen"
+  lastName: "Brendemo",
   domain: "brede.dev",
   url: "https://brede.dev",
   email: "brede@brede.dev",
@@ -20,12 +8,9 @@ export const site = {
   origin: "from Norway",
   coordinates: "42.03° N, 93.62° W",
 
-  githubUrl: "", // TODO(Brede): e.g. "https://github.com/yourusername"
-  linkedinUrl: "", // TODO(Brede): e.g. "https://www.linkedin.com/in/yourhandle"
-
-  // Drop your finalized resume PDF into /public (e.g. /public/Brede-Resume.pdf)
-  // then set this to "/Brede-Resume.pdf". Leave "" to hide the download button.
-  resumePdf: "", // TODO(Brede)
+  githubUrl: "https://github.com/Brede-00",
+  linkedinUrl: "https://www.linkedin.com/in/brede-brendemo",
+  resumePdf: "/Brede-Resume.pdf",
 
   availability: "Open to Summer 2027 internships",
   tagline: "Computer science student & builder",
@@ -37,26 +22,17 @@ export const fullName = [site.firstName, site.lastName]
   .filter(Boolean)
   .join(" ");
 
-// ---------------------------------------------------------------------------
-// HERO
-// ---------------------------------------------------------------------------
-
 export const hero = {
   headline: "I build systems that turn noisy data into decisions.",
   sub: "Computer science at Iowa State, graduating December 2027. Before that, business school in Oslo. I ship full-stack products and real-time data pipelines — and I care that they hold up against real data, not just in a demo.",
   primaryCta: { label: "View projects", href: "#projects" },
 };
 
-// Caption under the animated event-stream strip in the hero.
 export const stripCaption = {
   label: "fig. 01 — event stream, filtered",
   linkLabel: "market-data pipeline",
   linkHref: "/projects/market-data-pipeline/",
 };
-
-// ---------------------------------------------------------------------------
-// ABOUT
-// ---------------------------------------------------------------------------
 
 export const about = {
   heading: "About",
@@ -74,10 +50,6 @@ export const about = {
     { label: "Off the clock", value: "Football, markets & on-chain data" },
   ],
 };
-
-// ---------------------------------------------------------------------------
-// SKILLS
-// ---------------------------------------------------------------------------
 
 export const skills = {
   heading: "Skills",
@@ -111,10 +83,6 @@ export const skills = {
   ],
 };
 
-// ---------------------------------------------------------------------------
-// EDUCATION
-// ---------------------------------------------------------------------------
-
 export const education = {
   heading: "Education",
   entries: [
@@ -133,10 +101,6 @@ export const education = {
   ],
 };
 
-// ---------------------------------------------------------------------------
-// CONTACT
-// ---------------------------------------------------------------------------
-
 export const contact = {
   heading: "Contact",
   lead: "The fastest way to reach me:",
@@ -144,19 +108,9 @@ export const contact = {
     "Recruiting for Summer 2027, or want to talk data pipelines, markets, or football? My inbox is open.",
 };
 
-// ---------------------------------------------------------------------------
-// FOOTER
-// ---------------------------------------------------------------------------
-
 export const footer = {
-  note: "Designed and built by hand · Next.js, self-hosted fonts, no trackers",
+  note: "Next.js · self-hosted fonts · no trackers",
 };
-
-// ---------------------------------------------------------------------------
-// RESUME PAGE  (/resume)
-// Bullets here are independent of the project case studies so you can tune
-// resume phrasing without touching the site copy.
-// ---------------------------------------------------------------------------
 
 export const resume = {
   headline: "Computer science student targeting Summer 2027 software engineering and quantitative developer internships.",
@@ -180,42 +134,56 @@ export const resume = {
   ],
   projects: [
     {
+      name: "Circle — Private Social Media Platform",
+      stack: "Next.js, TypeScript, React Native, Expo, Tailwind CSS, Supabase, PostgreSQL",
+      dates: "2025 – Present",
+      bullets: [
+        "Built a full-stack platform for invite-based private communities with authentication, Circle creation, member access control, and post feeds backed by Supabase and PostgreSQL.",
+        "Designed relational data models for users, Circles, memberships, posts, and permissions — enforced with row-level security policies at the database layer and Postgres triggers keeping denormalized counters consistent.",
+        "Developed synchronized mobile and web experiences with Expo/React Native and Next.js; resolved cross-platform build and dependency conflicts across environments.",
+      ],
+    },
+    {
       name: "Real-Time Market Data Filter & Alert System",
-      stack: "Python, asyncio, WebSockets",
-      dates: "2026",
+      stack: "Python, WebSockets, ntfy",
+      dates: "2026 – Present",
       bullets: [
-        "Built a streaming pipeline that ingests every new Solana token launch and its bonding-curve trades over WebSockets into an append-only event log, with no filtering at ingest to keep the dataset assumption-free.",
-        "Wrote a strategy miner that replays collected history under a chronological 70/30 train/test split, so candidate trading rules are only accepted if they hold on unseen data.",
-        "Designed threshold-based alerting on live events, separating always-on collection from human-confirmed actions.",
+        "Built a Python event-processing system that consumes a live WebSocket stream of Solana token creation events, applying multi-criteria filtering logic to surface tokens matching configurable thresholds.",
+        "Prototyped against simulated historical data before live deployment; integrated ntfy for real-time mobile push notifications on qualifying events.",
+        "Redesigned the data pipeline around free public event streams after evaluating cost and coverage tradeoffs of paid per-token trade data APIs.",
       ],
     },
     {
-      name: "Circle — social coordination platform",
-      stack: "Next.js, TypeScript, Supabase, Expo / React Native",
-      dates: "2025 – 2026",
+      name: "BetterFuture — Financial Simulation Engine",
+      stack: "Java, Java Swing",
+      dates: "Jun. – Aug. 2025",
       bullets: [
-        "Built a full-stack social platform for coordinating college nightlife: a Next.js web app and an Expo mobile app sharing one Supabase backend (Postgres, auth).",
-        "Recovered a mobile build with unresolvable dependency conflicts by rebuilding the Expo project cleanly with a minimal, locked dependency set.",
+        "Built a Java financial planning tool with a Swing GUI that projects loan repayment, income, expenses, and net worth across multi-year horizons.",
+        "Designed an object-oriented domain model — separating loans, assets, and repayment strategies into distinct classes — to support configurable allocation logic and long-term maintainability.",
+      ],
+    },
+  ],
+  experience: [
+    {
+      company: "Broyte.no",
+      role: "Technical Localization & Customer Support Assistant (Contract)",
+      place: "Oslo, Norway",
+      dates: "Jun. 2022 – Dec. 2023",
+      bullets: [
+        "Reviewed and maintained structured JSON configuration files to ensure consistency and correctness across application content.",
+        "Translated technical issues and requirements between developers and users.",
       ],
     },
     {
-      name: "BTC Threshold Probability Dashboard",
-      stack: "Python, Streamlit, scikit-learn, pandas",
-      dates: "2026",
+      company: "Iowa State University",
+      role: "Dorm Mover",
+      place: "Ames, Iowa",
+      dates: "May – Aug. 2025 & May – Aug. 2026",
       bullets: [
-        "Built an interactive Streamlit dashboard that estimates short-horizon probabilities of Bitcoin crossing price thresholds using a KNN model over recent price-action features.",
-        "Added a backtester comparing model probabilities against Kalshi-implied probabilities to flag historical edges.",
-      ],
-    },
-    {
-      name: "BetterFuture — personal finance app",
-      stack: "Java, HTML/CSS/JavaScript",
-      dates: "2025",
-      bullets: [
-        "Designed and built a personal finance application end to end with a hand-rolled Java backend and a plain HTML/CSS/JS frontend — HTTP handling, persistence, and separation of concerns without frameworks.",
+        "Prepared 100+ dorm rooms per summer under tight deadlines; coordinated with small teams to meet daily assignments efficiently.",
       ],
     },
   ],
   skillsLine:
-    "Python · TypeScript · Java · SQL · React / Next.js · Node.js · Tailwind CSS · Expo / React Native · Supabase · pandas · scikit-learn · asyncio & WebSockets · Streamlit · Git · Linux",
+    "Languages: Java, Python, TypeScript, JavaScript · Frameworks & Libraries: Next.js, React, React Native (Expo), Tailwind CSS, JUnit · Databases & Backend: Supabase, PostgreSQL · Tools: Git, GitHub, VS Code, Claude Code, PyCharm, Eclipse",
 };

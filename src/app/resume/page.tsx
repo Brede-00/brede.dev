@@ -95,6 +95,34 @@ export default function ResumePage() {
         ))}
       </ul>
 
+      {/* Experience */}
+      <RuleHeading>Experience</RuleHeading>
+      <ul className="mt-4 space-y-5">
+        {resume.experience.map((e) => (
+          <li key={e.company + e.role}>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-6">
+              <span className="font-medium tracking-tight">{e.company}</span>
+              <span className="data-text text-slate">{e.dates}</span>
+            </div>
+            <div className="mt-0.5 flex flex-wrap items-baseline justify-between gap-x-6 text-slate">
+              <span>{e.role}</span>
+              <span className="data-text">{e.place}</span>
+            </div>
+            <ul className="mt-2 space-y-1.5">
+              {e.bullets.map((b, i) => (
+                <li key={i} className="flex gap-3 text-sm leading-relaxed">
+                  <span
+                    aria-hidden="true"
+                    className="mt-[0.55em] h-[4px] w-[4px] shrink-0 bg-ink"
+                  />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+
       {/* Skills */}
       <RuleHeading>Technical skills</RuleHeading>
       <p className="mt-4 text-sm leading-relaxed">{resume.skillsLine}</p>

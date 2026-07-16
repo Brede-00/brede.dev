@@ -13,7 +13,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 # ---- Edit these two lines, then rerun -------------------------------------
-NAME = "Brede"  # add your last name here too once it's set in site.ts
+NAME = "Brede Brendemo"  # add your last name here too once it's set in site.ts
 TAGLINE = "Computer science student & builder — brede.dev"
 AVAILABILITY = "OPEN TO SUMMER 2027 INTERNSHIPS"
 # ----------------------------------------------------------------------------

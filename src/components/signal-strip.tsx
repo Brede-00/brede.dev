@@ -1,10 +1,6 @@
 import Link from "next/link";
 import { stripCaption } from "@/content/site";
 
-// The signature motif: a stream of market events drifting past, with the rare
-// tick that clears the filter marked in signal red. Purely illustrative —
-// captioned as a figure — and deterministic, so server and client agree.
-
 const TICK_COUNT = 96;
 
 function pseudoRandom(i: number): number {
