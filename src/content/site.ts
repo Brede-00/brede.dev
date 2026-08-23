@@ -23,8 +23,8 @@ export const fullName = [site.firstName, site.lastName]
   .join(" ");
 
 export const hero = {
-  headline: "I build systems that turn noisy data into decisions.",
-  sub: "Computer science at Iowa State, graduating December 2027. Before that, business school in Oslo. I ship full-stack products and real-time data pipelines — and I care that they hold up against real data, not just in a demo.",
+  headline: "I build things and run them against real data.",
+  sub: "Computer science student at Iowa State, graduating December 2027. Before that, three years of business school in Oslo. Most of what I build ends up being full-stack apps or data pipelines, and I like actually testing them on real data instead of stopping at a demo.",
   primaryCta: { label: "View projects", href: "#projects" },
 };
 
@@ -37,15 +37,16 @@ export const stripCaption = {
 export const about = {
   heading: "About",
   paragraphs: [
-    "I came to software from the business side. Three years of business administration at BI Norwegian Business School in Oslo taught me how companies work — and left me wanting to be the person who builds the product rather than the one writing memos about it. So I moved to Iowa and switched to computer science.",
-    "Most of what I build starts with a real dataset or a real user. Right now that means a pipeline recording every new token launch on Solana, so I can test trading ideas against evidence instead of intuition. The same instinct runs through everything else here: build it end to end, put it in front of reality, keep what survives.",
-    "I'm looking for a Summer 2027 internship in software engineering or quantitative development — somewhere the code meets live data and the decisions have consequences.",
+    "I didn't start in CS. I spent three years in business administration at BI Norwegian Business School in Oslo, and by the end of it I'd realized I wanted to be the one building the product, not writing reports about it. So I switched, moved to Iowa, and started over in computer science.",
+    "Most of what I build starts from a real dataset or a real user instead of a tutorial. Right now that's a pipeline recording every new token launch on Solana, so I can actually test trading ideas against data instead of guessing. I try to do that with most of my projects: build the whole thing, then see what happens when real data hits it.",
+    "I'm looking for a Summer 2027 internship in software engineering or quantitative development.",
   ],
   facts: [
     { label: "Base", value: "Ames, Iowa — from Norway" },
     { label: "Studying", value: "B.S. Computer Science, Iowa State · Dec 2027" },
     { label: "Previously", value: "Business administration, BI Oslo · 2020–2023" },
-    { label: "This summer", value: "COMS 2300 — Discrete Computational Structures" },
+    { label: "Coursework so far", value: "Intro to Programming · OOP · Data Structures · Discrete Structures" },
+    { label: "This fall", value: "Software Dev Practices · Computer Architecture · Advanced Programming Techniques · Engineering Statistics" },
     { label: "Languages", value: "Norwegian (native) · English (fluent)" },
     { label: "Off the clock", value: "Football, markets & on-chain data" },
   ],
@@ -105,7 +106,7 @@ export const contact = {
   heading: "Contact",
   lead: "The fastest way to reach me:",
   closing:
-    "Recruiting for Summer 2027, or want to talk data pipelines, markets, or football? My inbox is open.",
+    "Recruiting for Summer 2027, or just want to talk data pipelines, markets, or football? Feel free to email me.",
 };
 
 export const footer = {

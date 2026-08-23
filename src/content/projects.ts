@@ -40,12 +40,12 @@ export const projects: Project[] = [
       { type: "h2", text: "Collect everything, filter later" },
       {
         type: "p",
-        text: "The collector holds a WebSocket connection to PumpPortal and writes every token creation event, and the bonding-curve trades that follow, into an append-only event log. Nothing is filtered at ingest — any filter would encode assumptions about what matters, and I don't know that yet. The pipeline's first job is to record everything.",
+        text: "The collector holds a WebSocket connection to PumpPortal and writes every token creation event, plus the bonding-curve trades that follow, into an append-only event log. Nothing gets filtered at ingest, because any filter would bake in assumptions about what matters, and I don't know that yet.",
       },
       { type: "h2", text: "Mining rules without fooling myself" },
       {
         type: "p",
-        text: "A separate miner replays the collected history looking for entry rules that would have worked. The split is chronological — train on the first 70% of time, validate on the last 30% — because a random split leaks the future into the past in time-series data. A rule only counts if it holds on data it has never seen.",
+        text: "A separate miner replays the collected history looking for entry rules that would have worked. The split is chronological: train on the first 70% of time, validate on the last 30%. A random split would leak the future into the past, since this is time-series data. A rule only counts if it holds up on data it hasn't seen.",
       },
       {
         type: "facts",
@@ -56,10 +56,10 @@ export const projects: Project[] = [
           { label: "Alerts", value: "Threshold rules on live events, human-confirmed exits" },
         ],
       },
-      { type: "h2", text: "Status, honestly" },
+      { type: "h2", text: "Current status" },
       {
         type: "p",
-        text: "The collector is built for multi-day unattended runs, and the miner's first full pass over that history will decide the first rule I trade — with a small position I can afford to lose. If nothing survives validation, that is a result too, and a cheaper one than finding out live.",
+        text: "The collector runs unattended for days at a time. Once the miner does a full pass over the history, I'll trade whatever rule survives validation, starting with a small position I can afford to lose. If nothing survives, that's still worth knowing, and cheaper to find out this way than with real money.",
       },
     ],
   },
@@ -70,13 +70,17 @@ export const projects: Project[] = [
     status: "Built — pre-launch",
     category: "Full-stack product · web + mobile",
     oneLiner:
-      "Social networking app built around small, intentional groups — two clients (web + native) sharing one Supabase backend with row-level security.",
+      "Social app for small, invite-based groups — my project for getting hands-on with a real database, auth, and shipping across two clients.",
     stack: ["Next.js", "TypeScript", "Supabase", "Expo / React Native", "Tailwind CSS"],
     links: [],
     body: [
       {
         type: "p",
-        text: "Most social apps give you one big feed. Circle is organized around small groups — public or private — where posts, membership, and roles stay scoped to the people who actually matter for that context. A close-friends circle and a class circle don't need to see each other.",
+        text: "I built this to get hands-on with things I'd only read about — a real database, real authentication, a real security model — rather than to plan out a product. Most of it came from directing Claude Code and reviewing what it produced instead of hand-writing every piece, and it shows: it was built fast and loose, without much upfront design. It works, but I wouldn't call it polished.",
+      },
+      {
+        type: "p",
+        text: "Most social apps give you one big feed. Circle is organized around small groups instead, public or private, where posts, membership, and roles stay scoped to that group. A close-friends circle and a class circle don't need to see each other.",
       },
       { type: "h2", text: "What it does" },
       {
@@ -86,12 +90,12 @@ export const projects: Project[] = [
       { type: "h2", text: "One backend, two clients" },
       {
         type: "p",
-        text: "The web app is Next.js with TypeScript and Tailwind; the mobile app is Expo with React Native. Both talk to one Supabase backend — Postgres for data, Supabase Auth for identity. Security is enforced at the database layer with row-level security policies on every table, not just client-side checks. Denormalized counters (members, followers, likes, comments) stay consistent through Postgres triggers rather than application-side counting.",
+        text: "The web app is Next.js with TypeScript and Tailwind, and the mobile app is Expo with React Native. Both talk to one Supabase backend: Postgres for data, Supabase Auth for identity. Security is enforced at the database layer with row-level security policies on every table, not just in the client. Denormalized counters (members, followers, likes, comments) stay consistent through Postgres triggers instead of being counted in the app.",
       },
       { type: "h2", text: "Rebuilding the mobile app" },
       {
         type: "p",
-        text: "The first Expo project drifted into dependency conflicts that no amount of resolution overrides could fix. I rebuilt it clean at a fresh path with a minimal, locked dependency set and moved code over piece by piece. Slower than forcing it, but the result actually builds reliably.",
+        text: "The first Expo project got stuck in dependency conflicts that resolution overrides couldn't fix. I rebuilt it from scratch at a fresh path with a minimal, locked-down dependency set and moved the code over piece by piece. Took longer, but it actually builds reliably now.",
       },
       {
         type: "facts",
@@ -117,12 +121,12 @@ export const projects: Project[] = [
     body: [
       {
         type: "p",
-        text: "Kalshi lists yes/no contracts on whether Bitcoin will be above a given price at a given time — which makes them, in effect, tradeable probabilities. The question this project asks: are those implied probabilities ever measurably off over short horizons?",
+        text: "Kalshi lists yes/no contracts on whether Bitcoin will be above a given price at a given time, which basically makes them tradeable probabilities. This project asks whether those implied probabilities are ever measurably off over short horizons.",
       },
       { type: "h2", text: "Model, then compare" },
       {
         type: "p",
-        text: "A KNN model estimates the probability that BTC crosses a chosen threshold within a chosen horizon, using features built from recent price action. A Streamlit dashboard makes the model interactive — pick a threshold, pick a horizon, see the estimate — and a backtester replays history to compare model probabilities against market-implied ones, flagging where an edge would have existed.",
+        text: "A KNN model estimates the probability that BTC crosses a chosen threshold within a chosen horizon, using features built from recent price action. A Streamlit dashboard makes the model interactive: pick a threshold, pick a horizon, see the estimate. A backtester replays history to compare the model's probabilities against market-implied ones and flags where an edge would have existed.",
       },
       { type: "h2", text: "What I would stress-test before trusting it" },
       {
@@ -152,7 +156,7 @@ export const projects: Project[] = [
       },
       {
         type: "p",
-        text: "The interesting part was the domain model. Loans, assets, and repayment strategies are separate classes with their own behavior, which made it possible to swap allocation logic — pay down the expensive loan first versus spread payments evenly — without touching the simulation loop. That separation is what I'd been reading about in object-oriented design; this is where it became a real decision instead of vocabulary.",
+        text: "The interesting part was the domain model. Loans, assets, and repayment strategies are separate classes with their own behavior, so I can swap allocation logic (pay off the expensive loan first vs. spread payments evenly) without touching the simulation loop. It was the first time OOP concepts I'd only read about in class actually mattered for a design decision.",
       },
       {
         type: "facts",
