@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: Letter; margin: 0.5in 0.55in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Calibri, Helvetica, Arial, sans-serif;
+    font-size: 10.3px;
+    line-height: 1.32;
+    color: #111;
+    margin: 0;
+  }
+  .name { text-align: center; font-size: 19px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .contact { text-align: center; font-size: 9.8px; margin-bottom: 10px; }
+  .contact a { color: #111; text-decoration: none; }
+  h2 {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    border-bottom: 1px solid #111; margin: 10px 0 4px 0; padding-bottom: 1px;
+    letter-spacing: 0.5px;
+  }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .entity { font-weight: 700; }
+  .dates { font-weight: 400; white-space: nowrap; padding-left: 8px; }
+  .subline { font-style: italic; margin-bottom: 2px; }
+  ul { margin: 2px 0 6px 0; padding-left: 16px; }
+  li { margin-bottom: 1px; }
+  .block { margin-bottom: 6px; }
+  .block:last-child { margin-bottom: 0; }
+  .skills p { margin: 2px 0; }
+</style>
+</head>
+<body>
+
+<div class="name">BREDE BRENDEMO</div>
+<div class="contact">
+  515-425-2574 | brede@brede.dev | linkedin.com/in/brede-brendemo | github.com/Brede-00 | brede.dev
+</div>
+
+<h2>Education</h2>
+<div class="block">
+  <div class="row"><span class="entity">Iowa State University, Ames, IA</span><span class="dates">Jan. 2024 &ndash; Expected Dec. 2027</span></div>
+  <div class="subline">B.S. in Computer Science</div>
+  <div>Coursework: Object-Oriented Programming, Data Structures, Discrete Computational Structures, Software Development Practices, Computer Architecture, Advanced Programming Techniques, Algorithms, Operating Systems, Programming Languages, Database Management Systems (in-progress &amp; scheduled; all completed by Summer 2027).</div>
+</div>
+<div class="block">
+  <div class="row"><span class="entity">BI Norwegian Business School, Oslo, Norway</span><span class="dates">Aug. 2020 &ndash; May 2023</span></div>
+  <div class="subline">Business Administration coursework</div>
+</div>
+
+<h2>Projects</h2>
+<div class="block">
+  <div class="row"><span class="entity">Real-Time Market Data Filter &amp; Alert System</span><span class="dates">2026 &ndash; Present</span></div>
+  <div class="subline">Python, WebSockets, ntfy</div>
+  <ul>
+    <li>Built a Python event-processing system that consumes a live WebSocket stream of Solana token creation events, applying multi-criteria filtering logic to surface tokens matching configurable thresholds.</li>
+    <li>Prototyped against simulated historical data before live deployment; integrated ntfy for real-time mobile push notifications on qualifying events.</li>
+    <li>Redesigned the data pipeline around free public event streams after evaluating cost and coverage tradeoffs of paid per-token trade data APIs.</li>
+  </ul>
+</div>
+<div class="block">
+  <div class="row"><span class="entity">Bible Learning App</span><span class="dates">2026 &ndash; Present</span></div>
+  <div class="subline">React Native, Expo, TypeScript</div>
+  <ul>
+    <li>Building a mobile Bible learning app structured around a knowledge graph (people, places, events, themes) instead of a flat lesson list, with breadth-first pathfinding to surface real connections between any two entities.</li>
+    <li>Implemented spaced-repetition review with a 5-box Leitner scheduler over questions generated from the graph, plus streaks and progress computed from actual completed lessons rather than separate counters.</li>
+    <li>445-question curated content base compiled into lessons and review items; local lesson flow and graph fully working, with Supabase-backed content as the next milestone.</li>
+  </ul>
+</div>
+<div class="block">
+  <div class="row"><span class="entity">Circle, Private Social Media Platform</span><span class="dates">2025 &ndash; Present</span></div>
+  <div class="subline">Next.js, TypeScript, React Native, Expo, Tailwind CSS, Supabase, PostgreSQL</div>
+  <ul>
+    <li>Built a full-stack platform for invite-based private communities with authentication, Circle creation, member access control, and post feeds backed by Supabase and PostgreSQL.</li>
+    <li>Implemented row-level security policies at the database layer across users, Circles, memberships, posts, and permissions, with Postgres triggers keeping denormalized counters consistent.</li>
+    <li>Developed synchronized mobile and web experiences with Expo/React Native and Next.js; resolved cross-platform build and dependency conflicts across environments.</li>
+  </ul>
+</div>
+
+<h2>Experience</h2>
+<div class="block">
+  <div class="row"><span class="entity">Broyte.no, Oslo, Norway</span><span class="dates">Jun. 2022 &ndash; Dec. 2023</span></div>
+  <div class="subline">Technical Localization &amp; Customer Support Assistant (Contract)</div>
+  <ul>
+    <li>Reviewed and maintained structured JSON configuration files to ensure consistency and correctness across application content.</li>
+    <li>Translated technical issues and requirements between developers and users; assisted with issue tracking and documentation to support application updates and localization efforts.</li>
+  </ul>
+</div>
+<div class="block">
+  <div class="row"><span class="entity">Dorm Mover, Iowa State University, Ames, IA</span><span class="dates">May &ndash; Aug. 2025 &amp; May &ndash; Aug. 2026</span></div>
+  <ul>
+    <li>Prepared 100+ dorm rooms per summer under tight deadlines; coordinated with small teams to meet daily assignments efficiently.</li>
+  </ul>
+</div>
+
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><b>Languages:</b> Java, Python, TypeScript, JavaScript</p>
+  <p><b>Frameworks &amp; Libraries:</b> Next.js, React, React Native (Expo), Tailwind CSS, JUnit</p>
+  <p><b>Databases &amp; Backend:</b> Supabase, PostgreSQL</p>
+  <p><b>Tools:</b> Git, GitHub, VS Code, Claude Code, PyCharm, Eclipse</p>
+</div>
+
+</body>
+</html>
