@@ -140,7 +140,7 @@ export const resume = {
       dates: "2025 – Present",
       bullets: [
         "Built a full-stack platform for invite-based private communities with authentication, Circle creation, member access control, and post feeds backed by Supabase and PostgreSQL.",
-        "Designed relational data models for users, Circles, memberships, posts, and permissions — enforced with row-level security policies at the database layer and Postgres triggers keeping denormalized counters consistent.",
+        "Designed relational data models for users, Circles, memberships, posts, and permissions, enforced with row-level security policies at the database layer and Postgres triggers keeping denormalized counters consistent.",
         "Developed synchronized mobile and web experiences with Expo/React Native and Next.js; resolved cross-platform build and dependency conflicts across environments.",
       ],
     },

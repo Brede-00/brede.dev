@@ -76,12 +76,12 @@ export const projects: Project[] = [
     body: [
       {
         type: "p",
-        text: "Most Bible apps are either a reading plan or a trivia quiz. What I actually wanted was something that treats the Bible the way it is: one connected story, where a name in Genesis matters again in Revelation. So instead of building lessons first and bolting on some \"related verses\" feature later, I built a knowledge graph first — people, places, events, miracles, parables, prophecies, themes, all as nodes with real edges between them — and made everything else in the app read from it.",
+        text: "Most Bible apps are either a reading plan or a trivia quiz. What I actually wanted was something that treats the Bible the way it is: one connected story, where a name in Genesis matters again in Revelation. So instead of building lessons first and bolting on some \"related verses\" feature later, I built a knowledge graph first. People, places, events, miracles, parables, prophecies, and themes are all nodes with real edges between them, and everything else in the app reads from that.",
       },
       { type: "h2", text: "The graph is the engine, not a feature" },
       {
         type: "p",
-        text: "There's a \"Discover a Path\" screen where you pick any two entities — say, a person and a place — and it runs a real breadth-first search over the graph and shows you the actual chain connecting them, not a canned explanation. Finishing a lesson unlocks the graph entities it covers, and your profile is a constellation view of your own unlocked subgraph, not a generic stats page. If a feature isn't derived from the graph, I've been cutting it rather than shipping a fake counter next to it.",
+        text: "There's a \"Discover a Path\" screen where you pick any two entities, say a person and a place, and it runs a real breadth-first search over the graph and shows you the actual chain connecting them, not a canned explanation. Finishing a lesson unlocks the graph entities it covers, and your profile is a constellation view of your own unlocked subgraph, not a generic stats page. If a feature isn't derived from the graph, I've been cutting it rather than shipping a fake counter next to it.",
       },
       { type: "h2", text: "Spaced repetition, not a checklist" },
       {
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       { type: "h2", text: "Where it actually is" },
       {
         type: "p",
-        text: "The lesson flow, graph, pathfinding, and review system all work locally right now — content still lives on-device, not in a real database yet. Moving that onto Supabase is the next real step, alongside making journeys (guided sequences through the graph, like following one character's arc) generated from the graph instead of hand-typed. This is the project I'm most invested in and the one I'll keep building through the semester, alongside coursework and internship applications.",
+        text: "The lesson flow, graph, pathfinding, and review system all work locally right now. Content still lives on-device, not in a real database yet. Moving that onto Supabase is the next real step, alongside making journeys (guided sequences through the graph, like following one character's arc) generated from the graph instead of hand-typed. This is the project I'm most invested in and the one I'll keep building through the semester, alongside coursework and internship applications.",
       },
     ],
   },
@@ -111,13 +111,13 @@ export const projects: Project[] = [
     status: "Built — pre-launch",
     category: "Full-stack product · web + mobile",
     oneLiner:
-      "Social app for small, invite-based groups — my project for getting hands-on with a real database, auth, and shipping across two clients.",
+      "Social app for small, invite-based groups. My project for getting hands-on with a real database, auth, and shipping across two clients.",
     stack: ["Next.js", "TypeScript", "Supabase", "Expo / React Native", "Tailwind CSS"],
     links: [],
     body: [
       {
         type: "p",
-        text: "I built this to get hands-on with things I'd only read about — a real database, real authentication, a real security model — rather than to plan out a product. Most of it came from directing Claude Code and reviewing what it produced instead of hand-writing every piece, and it shows: it was built fast and loose, without much upfront design. It works, but I wouldn't call it polished.",
+        text: "I built this to get hands-on with things I'd only read about, a real database, real authentication, a real security model, rather than to plan out a product. Most of it came from directing Claude Code and reviewing what it produced instead of hand-writing every piece, and it shows: it was built fast and loose, without much upfront design. It works, but I wouldn't call it polished.",
       },
       {
         type: "p",
@@ -173,9 +173,9 @@ export const projects: Project[] = [
       {
         type: "ul",
         items: [
-          "Regime shifts — a KNN fitted on calm markets says little about violent ones.",
-          "Fees, spread, and slippage — a paper edge has to survive the costs of being real.",
-          "Calibration — a model that says 70% should be right about 70% of the time, and that deserves its own test.",
+          "Regime shifts: a KNN fitted on calm markets says little about violent ones.",
+          "Fees, spread, and slippage: a paper edge has to survive the costs of being real.",
+          "Calibration: a model that says 70% should be right about 70% of the time, and that deserves its own test.",
         ],
       },
     ],
@@ -187,7 +187,7 @@ export const projects: Project[] = [
     status: "Complete",
     category: "First end-to-end build",
     oneLiner:
-      "Financial simulation engine in Java with a Swing GUI — projects loans, income, expenses, and net worth across multi-year horizons.",
+      "Financial simulation engine in Java with a Swing GUI that projects loans, income, expenses, and net worth across multi-year horizons.",
     stack: ["Java", "Java Swing"],
     links: [],
     body: [
