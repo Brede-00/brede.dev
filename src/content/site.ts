@@ -135,16 +135,6 @@ export const resume = {
   ],
   projects: [
     {
-      name: "Circle — Private Social Media Platform",
-      stack: "Next.js, TypeScript, React Native, Expo, Tailwind CSS, Supabase, PostgreSQL",
-      dates: "2025 – Present",
-      bullets: [
-        "Built a full-stack platform for invite-based private communities with authentication, Circle creation, member access control, and post feeds backed by Supabase and PostgreSQL.",
-        "Designed relational data models for users, Circles, memberships, posts, and permissions, enforced with row-level security policies at the database layer and Postgres triggers keeping denormalized counters consistent.",
-        "Developed synchronized mobile and web experiences with Expo/React Native and Next.js; resolved cross-platform build and dependency conflicts across environments.",
-      ],
-    },
-    {
       name: "Real-Time Market Data Filter & Alert System",
       stack: "Python, WebSockets, ntfy",
       dates: "2026 – Present",
@@ -162,6 +152,16 @@ export const resume = {
         "Building a mobile Bible learning app structured around a knowledge graph (people, places, events, themes) instead of a flat lesson list, with breadth-first pathfinding to surface real connections between any two entities.",
         "Implemented spaced-repetition review with a 5-box Leitner scheduler over questions generated from the graph, plus streaks and progress computed from actual completed lessons rather than separate counters.",
         "445-question curated content base compiled into lessons and review items; local lesson flow and graph fully working, with Supabase-backed content as the next milestone.",
+      ],
+    },
+    {
+      name: "Circle — Private Social Media Platform",
+      stack: "Next.js, TypeScript, React Native, Expo, Tailwind CSS, Supabase, PostgreSQL",
+      dates: "2025 – Present",
+      bullets: [
+        "Built a full-stack platform for invite-based private communities with authentication, Circle creation, member access control, and post feeds backed by Supabase and PostgreSQL.",
+        "Implemented row-level security policies at the database layer across users, Circles, memberships, posts, and permissions, with Postgres triggers keeping denormalized counters consistent.",
+        "Developed synchronized mobile and web experiences with Expo/React Native and Next.js; resolved cross-platform build and dependency conflicts across environments.",
       ],
     },
   ],
