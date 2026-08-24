@@ -78,10 +78,14 @@ export const projects: Project[] = [
         type: "p",
         text: "Most Bible apps are either a reading plan or a trivia quiz. What I actually wanted was something that treats the Bible the way it is: one connected story, where a name in Genesis matters again in Revelation. So instead of building lessons first and bolting on some \"related verses\" feature later, I built a knowledge graph first. People, places, events, miracles, parables, prophecies, and themes are all nodes with real edges between them, and everything else in the app reads from that.",
       },
-      { type: "h2", text: "The graph is the engine, not a feature" },
+      { type: "h2", text: "A web, not a straight line" },
       {
         type: "p",
-        text: "There's a \"Discover a Path\" screen where you pick any two entities, say a person and a place, and it runs a real breadth-first search over the graph and shows you the actual chain connecting them, not a canned explanation. Finishing a lesson unlocks the graph entities it covers, and your profile is a constellation view of your own unlocked subgraph, not a generic stats page. If a feature isn't derived from the graph, I've been cutting it rather than shipping a fake counter next to it.",
+        text: "You start from one choice, like picking a place (say, Egypt) from a list. The app doesn't hand-pick what to show you next: it pulls whatever's actually connected to that place through real graph edges, which is why Moses shows up. It's not that I decided Moses belongs there, it's that Scripture does. Finish a lesson and you get exactly one decision: \"want to learn more about X?\" where X is some specific detail from what you just read. Say yes and it branches to a lesson connected by theme rather than sequence, which can land you in a completely different book. Say no and it continues on the main path. So the app isn't a straight line through the text, it's a web you wander, and every branch is a real graph edge, not a curated \"related content\" list.",
+      },
+      {
+        type: "p",
+        text: "Your profile is a constellation view of your own unlocked subgraph, not a generic stats page, for the same reason: if a feature isn't derived from the graph, I've been cutting it rather than shipping a fake counter next to it.",
       },
       { type: "h2", text: "Spaced repetition, not a checklist" },
       {
