@@ -47,6 +47,7 @@ export const about = {
     { label: "Previously", value: "Business administration, BI Oslo · 2020–2023" },
     { label: "Coursework so far", value: "Intro to Programming · OOP · Data Structures · Discrete Structures" },
     { label: "This fall", value: "Software Dev Practices · Computer Architecture · Advanced Programming Techniques · Engineering Statistics" },
+    { label: "This spring", value: "Algorithms · Operating Systems · Databases · Programming Languages · Linear Algebra" },
     { label: "Languages", value: "Norwegian (native) · English (fluent)" },
     { label: "Off the clock", value: "Football, markets & on-chain data" },
   ],
@@ -123,6 +124,7 @@ export const resume = {
       dates: "Expected December 2027",
       lines: [
         "Fall 2026 coursework: Software Development Practices, Computer Architecture, Advanced Programming Techniques, Engineering Statistics",
+        "Spring 2027 coursework: Algorithms, Operating Systems, Databases, Programming Languages, Linear Algebra",
       ],
     },
     {
