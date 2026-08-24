@@ -64,6 +64,47 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "bible-learning-app",
+    title: "Bible Learning App",
+    year: "2026",
+    status: "Active — building",
+    category: "Mobile app · knowledge graph",
+    oneLiner:
+      "A Bible learning app built around a knowledge graph connecting people, places, events, and themes across Scripture, with spaced-repetition review instead of a lesson checklist.",
+    stack: ["React Native", "Expo", "TypeScript"],
+    links: [],
+    body: [
+      {
+        type: "p",
+        text: "Most Bible apps are either a reading plan or a trivia quiz. What I actually wanted was something that treats the Bible the way it is: one connected story, where a name in Genesis matters again in Revelation. So instead of building lessons first and bolting on some \"related verses\" feature later, I built a knowledge graph first — people, places, events, miracles, parables, prophecies, themes, all as nodes with real edges between them — and made everything else in the app read from it.",
+      },
+      { type: "h2", text: "The graph is the engine, not a feature" },
+      {
+        type: "p",
+        text: "There's a \"Discover a Path\" screen where you pick any two entities — say, a person and a place — and it runs a real breadth-first search over the graph and shows you the actual chain connecting them, not a canned explanation. Finishing a lesson unlocks the graph entities it covers, and your profile is a constellation view of your own unlocked subgraph, not a generic stats page. If a feature isn't derived from the graph, I've been cutting it rather than shipping a fake counter next to it.",
+      },
+      { type: "h2", text: "Spaced repetition, not a checklist" },
+      {
+        type: "p",
+        text: "Review runs on a classic 5-box Leitner scheduler over questions generated from the graph, so what you've learned is scheduled to resurface instead of disappearing the moment you finish a lesson. Streaks and progress are computed from actual activity and completed lessons, not a separate counter that can drift out of sync with what you've really done.",
+      },
+      {
+        type: "facts",
+        rows: [
+          { label: "Content", value: "445 curated questions across the Bible, compiled into lessons and review items" },
+          { label: "Graph", value: "13 entity types (people, places, events, miracles, themes, etc.), BFS pathfinding" },
+          { label: "Review", value: "5-box Leitner spaced repetition, generated from the graph" },
+          { label: "Tests", value: "Unit-tested with a passing suite, typechecked, linted" },
+        ],
+      },
+      { type: "h2", text: "Where it actually is" },
+      {
+        type: "p",
+        text: "The lesson flow, graph, pathfinding, and review system all work locally right now — content still lives on-device, not in a real database yet. Moving that onto Supabase is the next real step, alongside making journeys (guided sequences through the graph, like following one character's arc) generated from the graph instead of hand-typed. This is the project I'm most invested in and the one I'll keep building through the semester, alongside coursework and internship applications.",
+      },
+    ],
+  },
+  {
     slug: "circle",
     title: "Circle",
     year: "2025 — 2026",

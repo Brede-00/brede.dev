@@ -155,12 +155,13 @@ export const resume = {
       ],
     },
     {
-      name: "BetterFuture — Financial Simulation Engine",
-      stack: "Java, Java Swing",
-      dates: "Jun. – Aug. 2025",
+      name: "Bible Learning App",
+      stack: "React Native, Expo, TypeScript",
+      dates: "2026 – Present",
       bullets: [
-        "Built a Java financial planning tool with a Swing GUI that projects loan repayment, income, expenses, and net worth across multi-year horizons.",
-        "Designed an object-oriented domain model — separating loans, assets, and repayment strategies into distinct classes — to support configurable allocation logic and long-term maintainability.",
+        "Building a mobile Bible learning app structured around a knowledge graph (people, places, events, themes) instead of a flat lesson list, with breadth-first pathfinding to surface real connections between any two entities.",
+        "Implemented spaced-repetition review with a 5-box Leitner scheduler over questions generated from the graph, plus streaks and progress computed from actual completed lessons rather than separate counters.",
+        "445-question curated content base compiled into lessons and review items; local lesson flow and graph fully working, with Supabase-backed content as the next milestone.",
       ],
     },
   ],
