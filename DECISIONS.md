@@ -66,3 +66,10 @@ Semantic landmarks, visible keyboard focus, WCAG-AA contrast on all text colors,
 3. Push project code to GitHub and fill each project's `links` array — case pages without repo links are fine for launch, but recruiters click
 4. Rerun `scripts/generate-og.py` after step 1
 5. Read the four case studies once — they're written from what we've built together and are deliberately conservative; if any detail drifted from reality, edit it in `projects.ts` before launch
+
+## 2026-10-19 — Sync with new resume
+
+**D18 — Site content now follows the Oct 2026 resume.** Added Bookworm and Memory & Performance Analyzer; renamed the Solana project to the resume title; skills and coursework updated (Calc I/II and Discrete Math done; Linear Algebra is MATH 2070 next spring). Resume page mirrors the PDF's projects and skills.
+**D19 — Bible app: "In progress — alongside coursework"**, and the "most invested in" claim removed. It is paused, so the wording avoids implying it is the current priority.
+**D20 — Solana case study is analysis-only.** Removed the line about trading a surviving rule; project rules say data collection and analysis only, and the resume describes a research pipeline.
+**D21 — Not done:** swapping `public/Brede-Resume.pdf` (new PDF includes a phone number; site and repo are public) and adding the video annotation role to `/resume` (F-1 status and confidential footage pending).
