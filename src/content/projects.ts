@@ -24,13 +24,13 @@ export const projects: Project[] = [
 
   {
     slug: "market-data-pipeline",
-    title: "Real-Time Market Data Filter & Alert System",
+    title: "Solana Market Data Collection & Analytics Pipeline",
     year: "2026",
     status: "Active — collecting",
     category: "Data engineering · quant research",
     oneLiner:
       "Streaming pipeline that records every new Solana token launch, then mines the history for trading rules that survive out-of-sample validation.",
-    stack: ["Python", "asyncio", "WebSockets", "pandas"],
+    stack: ["Python", "asyncio", "WebSockets", "DuckDB", "SQL", "Parquet", "Streamlit", "Plotly"],
     links: [],
     body: [
       {
@@ -51,15 +51,80 @@ export const projects: Project[] = [
         type: "facts",
         rows: [
           { label: "Ingest", value: "PumpPortal WebSocket · asyncio" },
-          { label: "Storage", value: "Append-only event log, raw and unfiltered" },
+          { label: "Storage", value: "DuckDB and Parquet: append-only raw events, plus normalized, deduplicated datasets" },
           { label: "Validation", value: "Chronological 70/30 train/test split" },
-          { label: "Alerts", value: "Threshold rules on live events, human-confirmed exits" },
+          { label: "Analysis", value: "SQL workflows, time-based features, Streamlit and Plotly for inspection" },
         ],
       },
       { type: "h2", text: "Current status" },
       {
         type: "p",
-        text: "The collector runs unattended for days at a time. Once the miner does a full pass over the history, I'll trade whatever rule survives validation, starting with a small position I can afford to lose. If nothing survives, that's still worth knowing, and cheaper to find out this way than with real money.",
+        text: "The collector runs unattended for days at a time. A July 2026 audit recorded more than 135,000 tokens and 5.5 million time-series observations; those are historical audit counts, not live totals. This is data collection and analysis only, with no trading involved. If no rule survives validation, that's still a useful result.",
+      },
+    ],
+  },
+  {
+    slug: "bookworm",
+    title: "Bookworm — Collaborative Book & Social Platform",
+    year: "2026",
+    status: "Active — team project",
+    category: "Backend · team project",
+    oneLiner:
+      "Team-built book and social platform. I develop the Java backend: REST endpoints for the book catalog, backed by Spring Data JPA and MariaDB.",
+    stack: ["Java", "Spring Boot", "Spring Data JPA", "MariaDB", "Maven", "GitLab", "REST APIs"],
+    links: [],
+    body: [
+      {
+        type: "p",
+        text: "Bookworm is a collaborative book and social platform that I'm building with other students. I work on the backend: RESTful endpoints for book-catalog create, read, update, and delete operations, shaped around what the frontend needs.",
+      },
+      { type: "h2", text: "What I work on" },
+      {
+        type: "ul",
+        items: [
+          "Spring Boot controllers, Spring Data JPA repositories, and relational data models on MariaDB.",
+          "Troubleshooting API contracts, builds, and integration issues with teammates.",
+          "Scrum-like sprints on GitLab: tasks, feature branches, demos, and shared milestones.",
+        ],
+      },
+      {
+        type: "facts",
+        rows: [
+          { label: "Backend", value: "Java · Spring Boot · Spring Data JPA" },
+          { label: "Database", value: "MariaDB" },
+          { label: "Workflow", value: "GitLab · Maven · Scrum-like sprints" },
+          { label: "Code", value: "Team repository, not public" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "memory-performance-analyzer",
+    title: "Memory & Performance Analyzer",
+    year: "2026",
+    status: "Active — experiments",
+    category: "Systems · performance",
+    oneLiner:
+      "C and C++ benchmarks that measure how memory access patterns and allocation choices change execution time, read alongside the ARM64 assembly the compiler produces.",
+    stack: ["C", "C++", "ARM64 Assembly", "Performance benchmarking"],
+    links: [],
+    body: [
+      {
+        type: "p",
+        text: "An independent project to build intuition for how code meets hardware. I write small benchmarks, change one variable at a time, and see what the timings say.",
+      },
+      { type: "h2", text: "What it measures" },
+      {
+        type: "ul",
+        items: [
+          "Pointer-based array traversal and dynamic memory allocation across varying workloads.",
+          "Sequential versus randomized memory access patterns.",
+          "Compiler-generated ARM64 assembly, to connect C/C++ operations to the processor instructions behind them.",
+        ],
+      },
+      {
+        type: "p",
+        text: "It's a set of focused experiments so far, not a finished tool, and it pairs with my Computer Architecture and ARMv8 assembly coursework.",
       },
     ],
   },
@@ -67,7 +132,7 @@ export const projects: Project[] = [
     slug: "bible-learning-app",
     title: "Bible Learning App",
     year: "2026",
-    status: "Active — building",
+    status: "In progress — alongside coursework",
     category: "Mobile app · knowledge graph",
     oneLiner:
       "A Bible learning app built around a knowledge graph connecting people, places, events, and themes across Scripture, with spaced-repetition review instead of a lesson checklist.",
@@ -104,7 +169,7 @@ export const projects: Project[] = [
       { type: "h2", text: "Where it actually is" },
       {
         type: "p",
-        text: "The lesson flow, graph, pathfinding, and review system all work locally right now. Content still lives on-device, not in a real database yet. Moving that onto Supabase is the next real step, alongside making journeys (guided sequences through the graph, like following one character's arc) generated from the graph instead of hand-typed. This is the project I'm most invested in and the one I'll keep building through the semester, alongside coursework and internship applications.",
+        text: "The lesson flow, graph, pathfinding, and review system all work locally right now. Content still lives on-device, not in a real database yet. Moving that onto Supabase is the next real step, alongside making journeys (guided sequences through the graph, like following one character's arc) generated from the graph instead of hand-typed. I build it alongside coursework, so progress comes in bursts as my schedule allows.",
       },
     ],
   },
