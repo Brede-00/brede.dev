@@ -47,7 +47,7 @@ export const about = {
     { label: "Previously", value: "Business administration, BI Oslo · 2020–2023" },
     { label: "Coursework so far", value: "Intro to Programming · OOP · Data Structures · Discrete Math · Calculus I & II" },
     { label: "This fall", value: "Software Dev Practices (COM S 3090) · Computer Architecture (COM S 3210) · Advanced Programming Techniques (COM S 3270) · Statistics (STAT 3005)" },
-    { label: "Next spring", value: "Algorithms · Operating Systems · Databases · Programming Languages · Linear Algebra (MATH 2070)" },
+    { label: "Next spring", value: "Algorithms · Operating Systems · Databases · Programming Languages · Software System Safety (COM S 4150) · Linear Algebra (MATH 2070)" },
     { label: "Languages", value: "Norwegian (native) · English (fluent)" },
     { label: "Off the clock", value: "Football, markets & on-chain data" },
   ],
